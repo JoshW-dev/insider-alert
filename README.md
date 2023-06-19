@@ -47,3 +47,10 @@ For text message notifications, you'll need to provide your Twilio account SID a
 
 Please replace the placeholders in the script with your actual information.
 
+## Trading Strategy
+
+Check if 2 or more company insiders have purchased more than $25k worth of stock on the same day
+if
+- insiders are not new
+- avg volume in cash is >$10M 
+- avg volume in cash is <$50M

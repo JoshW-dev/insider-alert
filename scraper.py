@@ -3,16 +3,15 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-def scrape():
+def scrape(post_url):
 
 
     # Define the URL of the site
     base_url = 'http://openinsider.com/'
-    post = "latest-insider-purchases-25k"
-    print("Webscraping : " + base_url+[post])
+    print("Webscraping : " + base_url+post_url)
 
     # Send a GET request to the site
-    response = requests.get(base_url+post)
+    response = requests.get(base_url+post_url)
 
     # Parse the content of the request with BeautifulSoup
     soup = BeautifulSoup(response.content, 'html.parser')
@@ -35,5 +34,5 @@ def scrape():
 
     # Create a DataFrame from the data
     df = pd.DataFrame(data, columns=headers)
-    print(df)
+    return df
 
