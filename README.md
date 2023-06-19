@@ -18,7 +18,7 @@ Install the dependencies with pip:
 sh
 
 ```
-pip install beautifulsoup4 requests pandas
+pip install -r requirements.txt
 ```
 For optional email and text message notifications:
 
