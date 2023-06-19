@@ -1,6 +1,8 @@
 # Insider Trading Alert Bot
 This project is a bot designed to track and alert users when multiple high-level insiders (CEOs, CFOs, etc.) buy their own company's stock on the same day. The bot scrapes data from OpenInsider and sends notifications when the specified trading activity is detected.
 
+Inspired by [this video](https://www.youtube.com/watch?v=bhxblVMqsbo) by Calum Shallenberger
+
 ## Getting Started
 Dependencies
 The bot is implemented in Python and requires the following libraries:
@@ -31,7 +33,7 @@ pip install smtplib twilio
 After installing the dependencies, you can run the bot with the following command:
 
 ```
-python insider_trading_alert_bot.py
+python scraper.py
 ```
 
 The bot will scrape the recent insider trading data from OpenInsider, check for the specified trading activity, and send notifications if any is found.
