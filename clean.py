@@ -31,3 +31,7 @@ def summarize_multiple_trades(df):
             summaries.append(summary)
     
     return pd.DataFrame(summaries)
+
+def clean_value_column(df):
+    df['Value'] = df['Value'].replace({'\$': '', ',': '', '\+': ''}, regex=True).astype(float)
+    return df
