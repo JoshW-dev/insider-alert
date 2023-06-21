@@ -7,8 +7,8 @@ app = Flask(__name__)
 def home():
     # Read the CSV file
     filename="summary.csv"
-    data = pd.read_csv('csv/'+filename)
-    
+    data = pd.read_csv('/home/JoshWDev/insider-alert/csv/'+filename)
+
     # Convert the dataframe into a dictionary for easier processing in the template
     data_dict = data.to_dict('records')
 
