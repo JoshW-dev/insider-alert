@@ -15,6 +15,7 @@ df = scraper.scrape(post)
 df_duplicates = clean.find_multiple_trades(df)
 #clean value col
 df_duplicates = clean.clean_value_column(df_duplicates)
+df_duplicates.to_csv(r'csv/output.csv', index=False)
 
 summary = clean.summarize_multiple_trades(df_duplicates)
 #save to files

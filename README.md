@@ -33,7 +33,7 @@ pip install smtplib twilio
 After installing the dependencies, you can run the bot with the following command:
 
 ```
-python scraper.py
+python main.py
 ```
 
 The bot will scrape the recent insider trading data from OpenInsider, check for the specified trading activity, and send notifications if any is found.

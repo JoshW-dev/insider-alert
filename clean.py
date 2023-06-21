@@ -7,6 +7,7 @@ def find_multiple_trades(df):
     # Then, find the duplicate rows
     df_duplicates = df[df.duplicated(subset=['Ticker', 'Trade\xa0Date'], keep=False)]
     df_duplicates = df_duplicates.sort_values(by='Trade\xa0Date')
+    df_duplicates['Insider'] = df_duplicates['Insider Name'] + " - "+df_duplicates['Title'] 
     return df_duplicates
 
 def summarize_multiple_trades(df):
@@ -17,7 +18,7 @@ def summarize_multiple_trades(df):
     summaries = []
     
     for name, group in grouped:
-        unique_insiders = group['Insider\xa0Name'].nunique()
+        unique_insiders = group['Insider'].nunique()
         
         # If there is more than one unique 'Insider Name' in the group
         if unique_insiders > 1:
@@ -25,7 +26,7 @@ def summarize_multiple_trades(df):
                 'Trade Date': name[0],
                 'Company Name': name[1],
                 'Unique Insider Count': unique_insiders,
-                'Insider Names': list(group['Insider\xa0Name'].unique()),
+                'Insider': list(group['Insider'].unique()),
                 'Total Value': group['Value'].sum(),
             }
             summaries.append(summary)

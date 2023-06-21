@@ -15,8 +15,9 @@
             <tr>
                 <!-- Assuming the CSV file has columns 'col1', 'col2', 'col3' -->
                 <th scope="Trade Date">Trade Date</th>
-                <th scope="Company Name">Company Name</th>
-                <th scope="Insider Names">Insider Names</th>
+                <th scope="Company Name">CompanyName</th>
+                <th scope="Insider">Insiders</th>
+
                 <th scope="Total Value">Total Value</th>
             </tr>
         </thead>
@@ -25,7 +26,9 @@
                 <tr>
                     <td>{{ row['Trade Date'] }}</td>
                     <td>{{ row['Company Name'] }}</td>
-                    <td>{{ row['Insider Names'] }}</td>
+                    <td>{{ row['Insider'] }}</td>
+                    <td>{{ row['Title'] }}</td>
+                    
                     <td>{{ row['Total Value'] }}</td>
                 </tr>
             {% endfor %}
