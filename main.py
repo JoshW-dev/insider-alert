@@ -11,17 +11,13 @@ post = "screener?s=&o=&pl=&ph=&ll=&lh=&fd=730&fdr=&td=0&tdr=&fdlyl=&fdlyh=&daysa
 
 #scrape web 
 df = scraper.scrape(post)
-#output results as csv
-df.to_csv(r'csv/output.csv', index=False)
-
-
+#look for multiple trades on single day
 df_duplicates = clean.find_multiple_trades(df)
-#export to csv
-df_duplicates.to_csv(r'csv/outputNew.csv', index=False)
-
 #clean value col
 df_duplicates = clean.clean_value_column(df_duplicates)
 
-
 summary = clean.summarize_multiple_trades(df_duplicates)
+#save to files
+summary.to_csv(r'csv/summary.csv', index=False)
+
 print(summary)

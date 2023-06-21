@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insider Watchlist</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Insider Watchlist</h1>
+    <p>This webapp is designed to scrape data from http://openinsider.com/ and capture 
+        instances where multiple high level officers purchase their own stock on the same day.
+        This table is updated daily at 7 am EST with fresh data.</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <!-- Assuming the CSV file has columns 'col1', 'col2', 'col3' -->
+                <th scope="Trade Date">Trade Date</th>
+                <th scope="Company Name">Company Name</th>
+                <th scope="Insider Names">Insider Names</th>
+                <th scope="Total Value">Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row['Trade Date'] }}</td>
+                    <td>{{ row['Company Name'] }}</td>
+                    <td>{{ row['Insider Names'] }}</td>
+                    <td>{{ row['Total Value'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -29,8 +29,10 @@ def summarize_multiple_trades(df):
                 'Total Value': group['Value'].sum(),
             }
             summaries.append(summary)
-    
-    return pd.DataFrame(summaries)
+    df = pd.DataFrame(summaries)
+    df["Trade Date"] = df["Trade Date"].astype('datetime64[ns]')
+    df.sort_values(by='Trade Date', ascending = False, inplace = True) 
+    return pd.DataFrame(df)
 
 def clean_value_column(df):
     df['Value'] = df['Value'].replace({'\$': '', ',': '', '\+': ''}, regex=True).astype(float)
