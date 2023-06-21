@@ -47,6 +47,12 @@ For text message notifications, you'll need to provide your Twilio account SID a
 
 Please replace the placeholders in the script with your actual information.
 
+## Insider Trading
+
+Insider trading refers to the use of non-public information to make stock trading decisions. It's illegal if it involves material non-public information that can impact a company's stock price. However, it's legal for company insiders to trade their own company's stocks, as long as these trades are reported to the SEC in a timely manner. This information is publicly accessible, promoting market transparency.
+
+This transparency is beneficial for non-insiders as it provides them with valuable insights into the actions of insiders who have deep knowledge of the company. By observing and analyzing these reported trades, non-insiders can potentially discern patterns or trends about the company's financial health, aiding their investment decisions. It also helps maintain a fair marketplace, as it discourages illegal activities and encourages equal access to information.
+
 ## Trading Strategy
 
 Check if 2 or more company insiders have purchased more than $25k worth of stock on the same day

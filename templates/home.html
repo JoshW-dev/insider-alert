@@ -7,18 +7,27 @@
 <body>
 <div class="container">
     <h1>Insider Watchlist</h1>
-    <p>This webapp is designed to scrape data from http://openinsider.com/ and capture 
-        instances where multiple high level officers purchase their own stock on the same day.
-        This table is updated daily at 7 am EST with fresh data.</p>
+    <p>This webapp is designed to scrape SEC data and capture 
+        instances where multiple high level officers purchase stock from their company on the same day.
+        </p>
+    <h3>Is Insider Trading Legal?</h3>
+        <p> Insider trading involves using non-public information for stock trades. 
+            It's illegal if it's based on material non-public information, but legal if company insiders report their trades to the SEC. 
+            This publicly accessible information promotes market transparency. 
+            Non-insiders can gain insights from these trades, assisting their investment decisions and promoting a fair marketplace.
+
+        </p>
+
+            <h3>Insider Trade Table</h3>
+            <p>The table below is updated daily at 7 am EST with fresh data from from http://openinsider.com.</p>
+
     <table class="table">
         <thead>
             <tr>
-                <!-- Assuming the CSV file has columns 'col1', 'col2', 'col3' -->
                 <th scope="Trade Date">Trade Date</th>
-                <th scope="Company Name">CompanyName</th>
+                <th scope="Company Name">Company Name</th>
                 <th scope="Insider">Insiders</th>
-
-                <th scope="Total Value">Total Value</th>
+                <th scope="Total Value">Total Purchase Value</th>
             </tr>
         </thead>
         <tbody>
@@ -27,8 +36,6 @@
                     <td>{{ row['Trade Date'] }}</td>
                     <td>{{ row['Company Name'] }}</td>
                     <td>{{ row['Insider'] }}</td>
-                    <td>{{ row['Title'] }}</td>
-                    
                     <td>{{ row['Total Value'] }}</td>
                 </tr>
             {% endfor %}
