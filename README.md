@@ -1,34 +1,42 @@
 # Insider Trading Alert Bot
-This project is a bot designed to track and alert users when multiple high-level insiders (CEOs, CFOs, etc.) buy their own company's stock on the same day. The bot scrapes data from OpenInsider and sends notifications when the specified trading activity is detected.
+This project is a bot designed to track and alert users when multiple high-level insiders (CEOs, CFOs, etc.) buy their own company's stock on the same day. This repository contains lightweight code for a Flask application that scrapes data and displays it on a webpage. The data is updated daily at 7 am EST.
 
 Inspired by [this video](https://www.youtube.com/watch?v=bhxblVMqsbo) by Calum Shallenberger
 
-## Getting Started
-Dependencies
-The bot is implemented in Python and requires the following libraries:
+## Live Site
+You can view the live site at http://joshwdev.pythonanywhere.com/.
 
 
-- BeautifulSoup: for web scraping
-- requests: for making HTTP requests
-- pandas: for data manipulation
-- smtplib: for sending emails (optional, if email notifications are desired)
-- twilio: for sending text messages (optional, if SMS notifications are desired)
+### Planned features:
+- Send notifications via twilio when the specified trading activity is detected.
+- Scrape additional stock info
 
-Install the dependencies with pip:
+## Project Structure
+- app.py: This is the main Flask application file. It reads data from a CSV file and passes it to the home.html template.
+- main.py: This script scrapes data fom http://openinsider.com/ and saves it as a CSV file.
+- templates/home.html: This is the HTML template for the homepage. It displays the data in a table format.
 
 
-sh
+## Running this app
+This bot is hosted on [PythonAnywhere](http://joshwdev.pythonanywhere.com/), if you wish to run it locally, you can 
+follow steps below
 
+1. Clone the repository: 
 ```
+git clone https://github.com/JoshWDev/insider-alert.git
+```
+2. Navigate to the project directory and install the required packages:
+```
+cd insider-alert
 pip install -r requirements.txt
 ```
-For optional email and text message notifications:
 
+3. Run the Flask application: 
 ```
-pip install smtplib twilio
+python app.py
 ```
 
-## Running the Bot
+## Running the webscraper Bot
 
 After installing the dependencies, you can run the bot with the following command:
 
@@ -36,16 +44,9 @@ After installing the dependencies, you can run the bot with the following comman
 python main.py
 ```
 
-The bot will scrape the recent insider trading data from OpenInsider, check for the specified trading activity, and send notifications if any is found.
+The bot will scrape the recent insider trading data from OpenInsider, check for the specified trading activity, and update the summary.csv file.
 
-## Setting Up Notifications
-To use the email and/or text message notifications, you'll need to provide some additional information in the script:
 
-For email notifications, you'll need to provide the SMTP server and port, the email address and password to send from, and the recipient email address(es).
-
-For text message notifications, you'll need to provide your Twilio account SID and auth token, the Twilio phone number to send from, and the recipient phone number(s).
-
-Please replace the placeholders in the script with your actual information.
 
 ## Insider Trading
 
@@ -60,3 +61,7 @@ if
 - insiders are not new
 - avg volume in cash is >$10M 
 - avg volume in cash is <$50M
+
+
+## Contact
+Let me know if you have any questions or feedback at joshuafwade@gmail.com
