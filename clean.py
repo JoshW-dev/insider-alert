@@ -1,5 +1,6 @@
 import pandas as pd
-
+import locale
+locale.setlocale( locale.LC_ALL, 'English_United States.1252' )
 def find_multiple_trades(df):
     # Convert 'Trade Date' to datetime
     df['Trade\xa0Date'] = pd.to_datetime(df['Trade\xa0Date'])
@@ -27,7 +28,8 @@ def summarize_multiple_trades(df):
                 'Company Name': name[1],
                 'Unique Insider Count': unique_insiders,
                 'Insider': list(group['Insider'].unique()),
-                'Total Value': group['Value'].sum(),
+                'Total Value': locale.currency( group['Value'].sum(), grouping = True )
+
             }
             summaries.append(summary)
     df = pd.DataFrame(summaries)
