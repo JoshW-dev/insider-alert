@@ -10,6 +10,8 @@ You can view the live site at http://joshwdev.pythonanywhere.com/.
 ### Planned features:
 - Send notifications via twilio when the specified trading activity is detected.
 - Scrape additional stock info
+- Optimize searched insider trends by back testing past trades
+- Set up chatbot to answer questions about stocks and trading
 
 ## Project Structure
 - app.py: This is the main Flask application file. It reads data from a CSV file and passes it to the home.html template.
