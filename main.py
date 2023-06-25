@@ -1,6 +1,7 @@
 import scraper
 import clean
 import pandas as pd
+import os
 
 print("Main Script...")
 
@@ -20,6 +21,8 @@ df_duplicates = clean.clean_value_column(df_duplicates)
 
 summary = clean.summarize_multiple_trades(df_duplicates)
 #save to files
-summary.to_csv(r'summary.csv', index=False)
+my_dir = os.path.dirname(__file__)
+summary_filepath = os.path.join(my_dir, "summary.csv")
+summary.to_csv(summary_filepath, index=False)
 
 print(summary)
