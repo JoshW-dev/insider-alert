@@ -5,6 +5,7 @@ Inspired by [this video](https://www.youtube.com/watch?v=bhxblVMqsbo) by Calum S
 
 ## Live Site
 You can view the live site at http://joshwdev.pythonanywhere.com/.
+![Insider Trader Table](./static/insider-trader.png)
 
 
 ### Planned features:
