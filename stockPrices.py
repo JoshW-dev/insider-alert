@@ -12,16 +12,19 @@ def get_stock_data(ticker, start_date, end_date):
     return stock_data
 
 def combine_csv_files(directory):
-    # Create an empty DataFrame to store the combined data
-    combined_data = pd.DataFrame()
+    # Create a list to store the data from each CSV file
+    data_list = []
     # Get a list of all CSV files in the directory
     csv_files = [f for f in os.listdir(directory) if f.endswith('.csv')]
-    # Read each CSV file and append it to the combined data
+    # Read each CSV file and add it to the list
     for file in csv_files:
         data = pd.read_csv(f'{directory}/{file}')
-        combined_data = combined_data.append(data)
+        data_list.append(data)
+    # Combine all the data into one DataFrame
+    combined_data = pd.concat(data_list)
     # Save the combined data to a CSV file
     combined_data.to_csv(f'{directory}/combined_data.csv', index=False)
+
 
 # The most recent 10 cluster buys as of July 21
 ticker_date_ranges = [
