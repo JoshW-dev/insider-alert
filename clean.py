@@ -1,6 +1,13 @@
 import pandas as pd
 import locale
-locale.setlocale( locale.LC_ALL, 'English_United States.1252' )
+try:
+    locale.setlocale( locale.LC_ALL, 'English_United States.1252' )
+except locale.Error:
+    try:
+        locale.setlocale(locale.LC_ALL, 'en_US.utf8')
+    except locale.Error:
+        locale.setlocale(locale.LC_ALL, '')  # set to user's default setting
+
 def find_multiple_trades(df):
     # Convert 'Trade Date' to datetime
     df['Trade\xa0Date'] = pd.to_datetime(df['Trade\xa0Date'])
