@@ -1,11 +1,16 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 def calculate_percentage_change(start_price, end_price):
     return ((end_price - start_price) / start_price) * 100
 
+# Delete any old graph files in the directory
+for file in os.listdir('graphs'):
+    if file.endswith('.png'):
+        os.remove(f'graphs/{file}')
 
-#cleaned stock data scraped from http://openinsider.com/latest-cluster-buys
+# Load the insider trades data
 data = pd.read_csv('insider_trades.csv')
 
 # Load the combined stock data
@@ -17,9 +22,9 @@ combined_data['Date'] = pd.to_datetime(combined_data['Date'])
 # Set the 'Date' column as the index
 combined_data.set_index('Date', inplace=True)
 
-# Get the trade dates for each ticker
-trade_dates = {row['Unnamed: 3']: row['Unnamed: 2'] for _, row in data[1:11].iterrows()}
-trade_dates = {ticker: pd.to_datetime(date) for ticker, date in trade_dates.items()}
+# Get the trade and filling dates for each ticker
+trade_dates = {row['Ticker']: pd.to_datetime(row['Trade Date']) for _, row in data.iterrows()}
+filling_dates = {row['Ticker']: pd.to_datetime(row['Filing Date']) for _, row in data.iterrows()}
 
 # Get today's date
 today = pd.to_datetime('2023-07-21')
@@ -29,6 +34,7 @@ percentage_changes = {}
 for ticker in combined_data['Ticker'].unique():
     ticker_data = combined_data[combined_data['Ticker'] == ticker]
     trade_date = trade_dates[ticker]
+    filling_date = filling_dates[ticker]
     trade_price = ticker_data.loc[trade_date, 'Close']
     # Get the latest available date if today's date is not available
     try:
@@ -54,13 +60,22 @@ for ticker in combined_data['Ticker'].unique():
     plt.scatter(trade_date, trade_price, color='red')
     plt.text(trade_date, trade_price, f'Trade Date, {percentage_changes[ticker]["percentage_change"]:.2f}% change to latest', verticalalignment='bottom')
 
+    # Add a vertical line for the filling date
+    filling_date = filling_dates[ticker]
+    plt.axvline(filling_date, color='blue', linestyle='--')
+    plt.text(filling_date, ticker_data['Close'].min(), 'Filing Date', verticalalignment='top', color='blue')
+
+
     plt.title(f'Stock Prices for {ticker} Over Time')
     plt.xlabel('Date')
     plt.ylabel('Stock Price')
     plt.legend()
     plt.grid(True)
-    plt.show()
 
+    # Save the graph as an image file
+    plt.savefig(f'graphs/{ticker}_graph.png')
+
+    plt.show()
 # Print the report
 for ticker, info in percentage_changes.items():
     print(f'{ticker}:')
