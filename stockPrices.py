@@ -12,7 +12,7 @@ def get_tickers_from_csv(fileName):
     return tickers
 
 def get_stock_data(ticker, start_date, end_date):
-    directory = 'stockData'
+    directory = 'static/stockData'
     print("Getting stock data for " + ticker)
     print("From " + start_date + " to "+ end_date)
     

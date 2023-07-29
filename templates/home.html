@@ -20,16 +20,12 @@
 
         </p>
 
-            <h3>Insider Trade Table</h3>
-            <p>The table below is updated daily at 7 am EST with fresh data from from http://openinsider.com.</p>
-
+     
     <table class="table">
         <thead>
             <tr>
-                <th scope="Company Insider Details">Company Insider Details</th>
-                <th scope="Trade Dates">Trade Date</th>
+                <th scope="Company Insider Details">Insider Trade Details</th>
                 <th scope="Graph">Graph</th>
-                <th scope="CSV">Data</th>
             </tr>
         </thead>
         <tbody>
@@ -37,24 +33,20 @@
                 <tr>
                     <!-- Description -->
                     <td>
-                        <p>{{ row['Company Name'] }} ({{ row['Ticker'] }}) in the {{ row['Industry'] }} industry had {{ row['Ins'] }} insiders purchase a total of {{ row['Qty'] }} shares valued at ${{ row['Value'] }}. Filed on {{ row['Filing Date'] }}.</p>
+                        <p>{{ row['Company Name'] }} ({{ row['Ticker'] }}) in the {{ row['Industry'] }} industry had {{ row['Ins'] }} insiders purchase a total of {{ row['Qty'] }} shares valued at ${{ row['Value'] }}. 
+                            <p>Latest trade made on {{ row['Trade Date'] }}. Filed on {{ row['Filing Date'] }}.</p>
+                            
                         <p><a href="{{ row['Yahoo Link'] }}">Yahoo</a>  <a href="{{ row['OpenInsider Link'] }}">OpenInsider</a></p>
                     </td>
-                    
-                    <!-- Dates -->
-                    <td>
-                        <p>{{ row['Trade Date'] }}</p>
-                    </td>
-                    
+                                        
                     <!-- Graph -->
                     <td>
-                        <img src="{{ url_for('static', filename=row['Graph Image Name']) }}" alt="Graph of {{ row['Company Name'] }} stock price">
+                        <a href="{{ url_for('static', filename='stockData/' + row['Stock Price CSV File Link']) }}">                            
+                            <img src="{{ url_for('static', filename='graphs/' + row['Graph Image Name']) }}" alt="Graph of {{ row['Company Name'] }} stock price" width="600">
+                        </a>
+
                     </td>
                     
-                    <!-- CSV -->
-                    <td>
-                        <a href="{{ url_for('static', filename=row['Stock Price CSV File Link']) }}">Download</a>
-                    </td>
                 </tr>
             {% endfor %}
         </tbody>

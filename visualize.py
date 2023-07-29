@@ -6,7 +6,7 @@ import glob
 
 def plot_stock_price(ticker):
     # Define the file path for the stock data CSV file
-    file_path = f'stockData/{ticker}_data.csv'
+    file_path = f'static/stockData/{ticker}_data.csv'
 
     # Load the stock data into a pandas DataFrame
     stock_data = pd.read_csv(file_path)
@@ -55,12 +55,8 @@ def plot_stock_price(ticker):
     plt.legend()
     plt.grid(True)
 
-    # Create a directory for the graphs if it doesn't exist
-    if not os.path.exists('graphs'):
-        os.makedirs('graphs')
-
     # Save the graph as a PNG file in the 'graphs' directory
-    plt.savefig(f'graphs/{ticker}_graph.png')
+    plt.savefig(f'static/graphs/{ticker}_graph.png')
     
 
 
