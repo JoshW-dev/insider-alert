@@ -1,40 +1,16 @@
-Trade Date,Company Name,Unique Insider Count,Insider,Total Value
-2023-07-26,"Rocky Mountain Chocolate Factory, Inc.",2,"['Global Value Investment Corp. - 10%', 'Geygan Jeffrey Richart - Dir']","$151,716.00"
-2023-07-26,"B. Riley Financial, Inc.",4,"['Moore Andrew - CEO B. Riley Securities, Inc.', 'Paulson Randall E - Dir', 'Riley Bryant R - COB, Co-CEO, 10%', 'Kelleher Thomas J /Adv - Co-CEO']","$5,049,935.00"
-2023-07-25,Turnstone Biologics Corp.,2,"['Versant Ventures V, LLC - 10%', 'Jerel Davis - Dir, 10%']","$5,400,000.00"
-2023-07-25,"B. Riley Financial, Inc.",3,"['Paulson Randall E - Dir', 'Riley Bryant R - COB, Co-CEO, 10%', 'Moore Andrew - CEO B. Riley Securities, Inc.']","$4,549,985.00"
-2023-07-24,"Rocky Mountain Chocolate Factory, Inc.",2,"['Global Value Investment Corp. - 10%', 'Geygan Jeffrey Richart - Dir']","$144,530.00"
-2023-07-24,Aspira Women'S Health Inc.,2,"['Sandford Nicole - Pres, CEO', 'Schuler Jack W - 10%']","$549,951.00"
-2023-07-21,Martin Midstream Partners L.P.,2,"['Tauscher Randall - EVP, COO', 'Martin Ruben S - Dir, 10%']","$758,683.00"
-2023-07-20,Turnstone Biologics Corp.,2,"['Orbimed Advisors LLC - Dir, 10%', 'Gupta Rishi - Dir, 10%']","$9,999,984.00"
-2023-07-20,"Rocky Mountain Chocolate Factory, Inc.",2,"['Global Value Investment Corp. - 10%', 'Geygan Jeffrey Richart - Dir']","$173,158.00"
-2023-07-19,"Highpeak Energy, Inc.",3,"['Edgeworth Jason A. - Dir', 'Hightower Jack - CEO, 10%', 'Tholen Steven W - CFO']","$10,159,590.00"
-2023-07-19,"Aqua Metals, Inc.",2,"['Zhang Peifang - Dir', 'Smith Edward J - Dir']","$179,740.00"
-2023-07-18,Sagimet Biosciences Inc.,2,"['Seidenberg Beth C - Dir', 'New Enterprise Associates 13 LP - 10%']","$1,230,000.00"
-2023-07-18,"Rocky Mountain Chocolate Factory, Inc.",2,"['Geygan Jeffrey Richart - Dir', 'Global Value Investment Corp. - 10%']","$193,326.00"
-2023-07-18,"Millerknoll, Inc.",2,"['Smith Mike C. - Dir', 'Volkema Michael A - Dir']","$299,234.00"
-2023-07-17,Savara Inc,10,"['Yang Rick - 10%', 'Walker Paul Edward - 10%', 'Sandell Scott D - 10%', 'Mathers Edward T - 10%', 'Makhzoumi Mohamad - 10%', 'Chang Carmen - 10%', 'Behbahani Ali - 10%', 'Baskett Forest - 10%', 'Growth Equity Opportunities 17, LLC - 10%', 'Florence Anthony A. Jr. - 10%']","$9,999,990.00"
-2023-07-17,"Fidelity National Information Services, Inc.",2,"['Goldstein Jeffrey A - Dir', 'Alemany Ellen R - Dir']","$99,347.00"
-2023-07-13,Cadiz Inc,2,"['Kennedy Susan P - Dir', 'Slater Scott S - CEO']","$98,000.00"
-2023-07-12,Landmark Bancorp Inc,2,"['Lewis Jim - Dir', 'Ball Richard - Dir']","$92,409.00"
-2023-07-06,Epsilon Energy Ltd.,2,"['Stankowski Jason - Dir', 'Solas Capital Management, LLC - 10%']","$900,000.00"
-2023-07-05,"Black Diamond Therapeutics, Inc.",2,"['Ra Capital Management, L.P. - Dir', 'Behbahani Ali - Dir']","$9,679,250.00"
-2023-07-03,"Kodiak Gas Services, Inc.",5,"['McKee Robert Michael - See Remarks', 'Lenamon William Chad - See Remarks', 'Hogan Randall J - Dir', 'Griggs John - See Remarks', 'Hamilton Ewan William - See Remarks']","$574,400.00"
-2023-06-30,Simon Property Group Inc /de/,6,"['Rodkin Gary M - Dir', 'Aeppel Glyn - Dir', 'Glasscock Larry C - Dir', 'Hubbard Allan B - Dir', 'Leibowitz Reuben S - Dir', 'Smith Daniel C. - Dir']","$251,255.00"
-2023-06-30,Alliance Entertainment Holding Corp,4,"['Ogilvie Bruce A Jr - Exec COB, 10%', 'Finke Thomas M - Dir', 'Donaldson Walter Tommy III - Dir', 'Walker Jeffrey Clinton - CEO, 10%']","$999,600.00"
-2023-06-29,"Igm Biosciences, Inc.",2,"['Topsoe Jakob Haldor - Dir, 10%', 'Redmile Group, LLC - Dir']","$821,807.00"
-2023-06-23,Gray Television Inc,2,"['Howell Robin Robinson - Dir', 'Howell Hilton H Jr - COB, Pres, CEO']","$70,680.00"
-2023-06-23,Diamedica Therapeutics Inc.,5,"['Pauls Dietrich John - Pres, CEO', 'Wambeke David J. - Chief Business Officer', 'Pilnik Richard D. - Dir', 'Giuffre Randall Michael - Dir', 'Kellen Scott - CFO, Secretary']","$643,249.00"
-2023-06-20,"Cava Group, Inc.",3,"['Tolivar Tricia K. - CFO', 'Bertram Kenneth Robert - CLO, Secretary', 'Xenohristos Theodoros - Dir']","$204,490.00"
-2023-06-16,Clene Inc.,3,"['Matlin David J - Dir', 'Gay Jonathon - Dir', 'Mosca Alison - Dir']","$3,200,000.00"
-2023-06-14,Crawford United Corp,2,"['Crawford Matthew V - Dir, 10%', 'Crawford Edward F - Dir, 10%']","$1,080,000.00"
-2023-06-14,Stewart Information Services Corp,2,"['Bradley C Allen Jr - Dir', 'Eppinger Frederick H - CEO']","$125,909.00"
-2023-06-13,Movano Inc.,3,"['Cogan Jeremy - CFO', 'Leabman Michael Aaron - CTO', 'Fairbairn Emily - Dir']","$310,000.00"
-2023-06-13,Comtech Telecommunications Corp /de/,2,"['Peterman Ken Allen - COB, Pres, CEO', 'Bondi Michael - CFO']","$96,782.00"
-2023-06-12,Landsea Homes Corp,3,"['Ho John - CEO', 'Forsum Michael - Pres, COO', 'Porter Christopher T - CFO']","$449,993.00"
-2023-06-12,"Akoya Biosciences, Inc.",4,"['Winkler Matthew - Dir', 'Shepler Robert G - Dir', 'Raffin Thomas A. - Dir', 'Ek John Frederick - CFO']","$11,816,940.00"
-2023-06-09,Gamestop Corp.,3,"['Cohen Ryan - Exec COB, 10%', 'Cheng Lawrence - Dir', 'Attal Alain - Dir']","$10,336,292.00"
-2023-06-07,Advance Auto Parts Inc,4,"['Jones Jeffrey J II - Dir', 'Lee Eugene I Jr - Dir', 'Ferraro John Francis - Dir', 'Bailo Carla Jean - Dir']","$733,648.00"
-2023-06-05,Oppfi Inc.,2,"['Schwartz Todd G. - CEO, 10%', 'Schwartz Theodore G - Dir, 10%']","$52,312.00"
-2023-06-02,"Great Elm Group, Inc.",3,"['Reese Jason W. - CEO, 10%', 'Drapkin Matthew A - Dir, 10%', 'Northern Right Capital Management, L.P. - Member of 13D 10% Group, 10%']","$92,860.00"
-2023-05-09,Progressive Care Inc.,2,"['Fernandez Charles M. - COB, CEO', 'Barreto Rodney - Dir']","$2,002,000.00"
+Filing Date,Trade Date,Ticker,Company Name,Industry,Ins,Price,Qty,Owned,ΔOwn,Value,Yahoo Link,OpenInsider Link,Graph Image Name,Stock Price CSV File Link
+2023-07-28 16:02:43,2023-07-28,SFST,Southern First Bancshares Inc,National Commercial Banks,3,25.89,14500,157588,10.0,375338,https://finance.yahoo.com/quote/SFST,http://openinsider.com/SFST,SFST_graph.png,SFST_data.csv
+2023-07-28 14:29:45,2023-07-27,AGNC,Agnc Investment Corp.,Real Estate Investment Trusts,2,9.38,15772,226050,8.0,148001,https://finance.yahoo.com/quote/AGNC,http://openinsider.com/AGNC,AGNC_graph.png,AGNC_data.csv
+2023-07-28 09:18:14,2023-07-26,NWBI,Northwest Bancshares Inc.,National Commercial Banks,5,10.9,31509,298900,12.0,343395,https://finance.yahoo.com/quote/NWBI,http://openinsider.com/NWBI,NWBI_graph.png,NWBI_data.csv
+2023-07-27 17:00:11,2023-07-26,RILY,B. Riley Financial Inc.,Investment Advice,4,55.0,174544,8787525,2.0,9599920,https://finance.yahoo.com/quote/RILY,http://openinsider.com/RILY,RILY_graph.png,RILY_data.csv
+2023-07-25 17:16:06,2023-07-24,AWH,Aspira Women'S Health Inc.,In Vitro & In Vivo Diagnostic Substances,2,3.98,21357,158498,16.0,85001,https://finance.yahoo.com/quote/AWH,http://openinsider.com/AWH,AWH_graph.png,AWH_data.csv
+2023-07-25 12:05:31,2023-07-25,BHLB,Berkshire Hills Bancorp Inc,Savings Institutions Not Federally Chartered,2,20.01,8800,110337,9.0,176085,https://finance.yahoo.com/quote/BHLB,http://openinsider.com/BHLB,BHLB_graph.png,BHLB_data.csv
+2023-07-21 17:24:52,2023-07-19,HPK,Highpeak Energy Inc.,Drilling Oil & Gas Wells,8,10.5,8854050,101266831,10.0,92967525,https://finance.yahoo.com/quote/HPK,http://openinsider.com/HPK,HPK_graph.png,HPK_data.csv
+2023-07-20 18:20:08,2023-07-18,MLKN,Millerknoll Inc.,Office Furniture,4,16.63,90144,283667,47.0,1499371,https://finance.yahoo.com/quote/MLKN,http://openinsider.com/MLKN,MLKN_graph.png,MLKN_data.csv
+2023-07-20 12:10:40,2023-06-22,CAPIX,Calamos Aksia Alternative Credit & Income Fund,Closed-End Funds,7,10.01,2476723,2476723,,24799996,https://finance.yahoo.com/quote/CAPIX,http://openinsider.com/CAPIX,CAPIX_graph.png,CAPIX_data.csv
+2023-07-17 20:11:42,2023-07-14,CVGW,Calavo Growers Inc,Agricultural Services,2,30.35,77000,551702,16.0,2336680,https://finance.yahoo.com/quote/CVGW,http://openinsider.com/CVGW,CVGW_graph.png,CVGW_data.csv
+2023-07-17 08:54:18,2023-07-06,CDZI,Cadiz Inc,Water Supply,4,3.8,328000,23929309,1.0,1248000,https://finance.yahoo.com/quote/CDZI,http://openinsider.com/CDZI,CDZI_graph.png,CDZI_data.csv
+2023-07-10 16:40:48,2023-07-06,EPSN,Epsilon Energy Ltd.,Crude Petroleum & Natural Gas,3,5.01,209300,4212231,5.0,1048036,https://finance.yahoo.com/quote/EPSN,http://openinsider.com/EPSN,EPSN_graph.png,EPSN_data.csv
+2023-07-07 16:59:16,2023-07-05,CNXC,Concentrix Corp,Business Services,2,83.31,700,10728,7.0,58319,https://finance.yahoo.com/quote/CNXC,http://openinsider.com/CNXC,CNXC_graph.png,CNXC_data.csv
+2023-07-05 19:53:13,2023-07-03,KGS,Kodiak Gas Services Inc.,Natural Gas Transmission,6,16.0,44900,204275,28.0,718400,https://finance.yahoo.com/quote/KGS,http://openinsider.com/KGS,KGS_graph.png,KGS_data.csv
+2023-07-05 08:44:40,2023-05-18,TURN,180 Degree Capital Corp. /ny/,Investors,2,4.62,60709,774300,9.0,280572,https://finance.yahoo.com/quote/TURN,http://openinsider.com/TURN,TURN_graph.png,TURN_data.csv

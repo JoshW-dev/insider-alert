@@ -22,5 +22,6 @@ print("Scraping Stock Prices")
 
 stockPrices.save_stock_data(tickers)
 print("Generating Price Graphs")
-
 visualize.plot_multiple_stocks(tickers)
+
+scraper.create_summary_file()

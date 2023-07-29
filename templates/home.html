@@ -26,22 +26,39 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="Trade Date">Trade Date</th>
-                <th scope="Company Name">Company Name</th>
-                <th scope="Insider">Insiders</th>
-                <th scope="Total Value">Total Purchase Value</th>
+                <th scope="Company Insider Details">Company Insider Details</th>
+                <th scope="Trade Dates">Trade Date</th>
+                <th scope="Graph">Graph</th>
+                <th scope="CSV">Data</th>
             </tr>
         </thead>
         <tbody>
             {% for row in data %}
                 <tr>
-                    <td>{{ row['Trade Date'] }}</td>
-                    <td>{{ row['Company Name'] }}</td>
-                    <td>{{ row['Insider'] }}</td>
-                    <td>{{ row['Total Value'] }}</td>
+                    <!-- Description -->
+                    <td>
+                        <p>{{ row['Company Name'] }} ({{ row['Ticker'] }}) in the {{ row['Industry'] }} industry had {{ row['Ins'] }} insiders purchase a total of {{ row['Qty'] }} shares valued at ${{ row['Value'] }}. Filed on {{ row['Filing Date'] }}.</p>
+                        <p><a href="{{ row['Yahoo Link'] }}">Yahoo</a>  <a href="{{ row['OpenInsider Link'] }}">OpenInsider</a></p>
+                    </td>
+                    
+                    <!-- Dates -->
+                    <td>
+                        <p>{{ row['Trade Date'] }}</p>
+                    </td>
+                    
+                    <!-- Graph -->
+                    <td>
+                        <img src="{{ url_for('static', filename=row['Graph Image Name']) }}" alt="Graph of {{ row['Company Name'] }} stock price">
+                    </td>
+                    
+                    <!-- CSV -->
+                    <td>
+                        <a href="{{ url_for('static', filename=row['Stock Price CSV File Link']) }}">Download</a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
+        
     </table>
 </div>
 </body>
