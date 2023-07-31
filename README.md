@@ -1,5 +1,5 @@
-# Insider Trading Alert Bot
-This project is a bot designed to track and alert users when multiple high-level insiders (CEOs, CFOs, etc.) buy their own company's stock on the same day. This repository contains lightweight code for a Flask application that scrapes data and displays it on a webpage. The data is updated daily at 7 am EST.
+# Insider Trading Analysis Tool
+This project is a bot designed to track and alert users when multiple high-level insiders (CEOs, CFOs, etc.) buy their own company's stock on the same day. This repository contains lightweight code for a Flask application that scrapes data and displays it on a webpage. The data is updated daily at 5 am EST.
 
 Inspired by [this video](https://www.youtube.com/watch?v=bhxblVMqsbo) by Calum Shallenberger
 
@@ -7,64 +7,52 @@ Inspired by [this video](https://www.youtube.com/watch?v=bhxblVMqsbo) by Calum S
 You can view the live site at http://joshwdev.pythonanywhere.com/.
 ![Insider Trader Table](./static/insider-trader.png)
 
+## Project Overview
 
-### Planned features:
-- Send notifications via twilio when the specified trading activity is detected.
-- Scrape additional stock info
-- Optimize searched insider trends by back testing past trades
-- Set up chatbot to answer questions about stocks and trading
+This tool provides an analysis of recent insider trading activities, helping investors understand how stock prices move in response to these events. The tool scrapes data from [OpenInsider](http://openinsider.com/latest-cluster-buys), analyzes the stock performance before and after the insider trades, and presents this data in a user-friendly manner through a Flask web application.
 
-## Project Structure
-- app.py: This is the main Flask application file. It reads data from a CSV file and passes it to the home.html template.
-- main.py: This script scrapes data fom http://openinsider.com/ and saves it as a CSV file.
-- templates/home.html: This is the HTML template for the homepage. It displays the data in a table format.
+## System Architecture
 
+The system is composed of three main components:
 
-## Running this app
-This bot is hosted on [PythonAnywhere](http://joshwdev.pythonanywhere.com/), if you wish to run it locally, you can 
-follow steps below
+1. **Data Scraping**: A Python script that uses `requests` and `BeautifulSoup` libraries to scrape insider trading data from OpenInsider and save it as a CSV file.
 
-1. Clone the repository: 
-```
-git clone https://github.com/JoshWDev/insider-alert.git
-```
-2. Navigate to the project directory and install the required packages:
-```
-cd insider-alert
-pip install -r requirements.txt
-```
+2. **Data Analysis and Visualization**: A Python script that uses `pandas` and `matplotlib` libraries to analyze the scraped data, fetch related stock price data, calculate the percentage change in stock prices, and generate plots showing the stock price movement over time.
 
-3. Run the Flask application: 
-```
-python app.py
-```
+3. **Web Application**: A Flask web application that presents the data and visualizations to the end-user in an easy-to-understand format.
 
-## Running the webscraper Bot
+## Features
 
-After installing the dependencies, you can run the bot with the following command:
+- **Insider Trading Data**: Displays information about recent insider trading activities, including the filing date, trade date, ticker, company name, industry, insider's name, trade type, price, quantity, owned, ΔOwn, and value.
+
+- **Stock Performance Analysis**: Provides a visual representation of how the stock price moved before and after the insider trade.
+
+- **Research Links**: Provides direct links to OpenInsider and Yahoo Finance for each ticker, allowing users to conduct further research.
+
+## Usage
+
+1. Run the main file to call the data scraping script to fetch the latest insider trading data, analyze the stock performance and generate visualizations.
 
 ```
 python main.py
 ```
 
-The bot will scrape the recent insider trading data from OpenInsider, check for the specified trading activity, and update the summary.csv file.
+3. Launch the Flask application to view the data and visualizations in a web browser. By default it will run [locally on port 5000](http://127.0.0.1:5000)
+```
+python app.py
+```
 
 
+## Note
 
-## Insider Trading
+This tool should be used for informational purposes only. Always conduct your own research and consider seeking advice from a certified financial advisor before making any investment decisions.
 
-Insider trading refers to the use of non-public information to make stock trading decisions. It's illegal if it involves material non-public information that can impact a company's stock price. However, it's legal for company insiders to trade their own company's stocks, as long as these trades are reported to the SEC in a timely manner. This information is publicly accessible, promoting market transparency.
+## Future Enhancements
 
-This transparency is beneficial for non-insiders as it provides them with valuable insights into the actions of insiders who have deep knowledge of the company. By observing and analyzing these reported trades, non-insiders can potentially discern patterns or trends about the company's financial health, aiding their investment decisions. It also helps maintain a fair marketplace, as it discourages illegal activities and encourages equal access to information.
+- Automate the data scraping and analysis processes to provide real-time insights.
+- Extend the Flask application to include more features, such as allowing users to search for specific tickers, displaying more detailed stock performance analysis, etc.
+- Incorporate more data sources to provide a comprehensive overview of insider trading activities.
 
-## Trading Strategy
+## Disclaimer
 
-Check if 2 or more company insiders have purchased more than $25k worth of stock on the same day
-if
-- insiders are not new
-- avg volume in cash is >$10M 
-- avg volume in cash is <$50M
-
-
-## Contact
-Let me know if you have any questions or feedback at joshuafwade@gmail.com
+Insider trading data is provided by OpenInsider. The analysis and conclusions drawn from this data are the work of this application and should not be considered financial advice. Always conduct your own research before making investment decisions.

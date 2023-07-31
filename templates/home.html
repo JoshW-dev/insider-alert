@@ -8,18 +8,12 @@
 </head>
 <body>
 <div class="container">
-    <h1>Insider Watchlist</h1>
-    <p>This webapp is designed to scrape SEC data and capture 
-        instances where multiple high level officers purchase stock from their company on the same day.
-        </p>
-    <h3>Is Insider Trading Legal?</h3>
-        <p> Insider trading involves using non-public information for stock trades. 
-            It's illegal if it's based on material non-public information, but legal if company insiders report their trades to the SEC. 
-            This publicly accessible information promotes market transparency. 
-            Non-insiders can gain insights from these trades, assisting their investment decisions and promoting a fair marketplace.
-
-        </p>
-
+    <a href="https://www.buymeacoffee.com/JoshWade" target="_blank" style="position: absolute; top: 20px; right: 40px; display: inline-block; background-color: #FF813F; color: white; padding: 10px 20px; text-decoration: none; font-size: 16px; border-radius: 5px;">Support Me</a>
+    <h1>Artificial Insider</h1>
+<br/>
+<p>This webapp is designed to analyze recent insider trading activities and their impact on stock prices. The tool scrapes SEC data from <a href="http://openinsider.com/latest-cluster-buys">OpenInsider</a>, focusing on instances where multiple high level officers purchase stock from their company within a short period. It then fetches the corresponding stock price data, analyzes how the stock price moved before and after the insider trades, and presents this data in a user-friendly manner.</p>
+<h4>How Does This Tool Work?</h4>
+<p>Each day, the tool scrapes the latest insider trading data and generates a new analysis of the stock performance for the involved companies. The results are visualized in graphs that plot the stock price movement over time, with indicators marking the trade and filing dates. The tool also calculates the percentage change in stock prices from the trade date to the present. All this information is presented in an easy-to-understand format, with direct links to OpenInsider and Yahoo Finance for further research. Please note that this tool should be used for informational purposes only. Always conduct your own research and consider seeking advice from a certified financial advisor before making any investment decisions.</p>
      
     <table class="table">
         <thead>
@@ -52,6 +46,18 @@
         </tbody>
         
     </table>
+    <h4>Is Insider Trading Legal?</h4>
+<p>Insider trading involves trading a public company's stock or other securities (such as bonds or stock options) based on material, non-public information about the company. While insider trading is illegal when it involves misuse of non-public, material information, it is completely legal if company insiders report their trades to the SEC within two business days of the transaction. This publicly accessible information promotes market transparency. Non-insiders can gain insights from these trades, which can assist their investment decisions and promote a fair marketplace.</p>
+
 </div>
+<footer style="background-color: #f8f9fa; padding: 20px; text-align: center; margin-top: 50px;">
+    <p>&copy; 2023 MethodAI. All rights reserved.</p>
+    <p>For informational purposes only. Always conduct your own research and consider seeking advice from a certified financial advisor before making any investment decisions.</p>
+    <p>
+        <a href="https://www.sec.gov/rules/final/33-7881.htm" target="_blank">SEC Insider Trading Regulations</a> |
+        <a href="https://www.openinsider.com/" target="_blank">OpenInsider</a> |
+        <a href="https://finance.yahoo.com/" target="_blank">Yahoo Finance</a>
+    </p>
+</footer>
 </body>
 </html>
