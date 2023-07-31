@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import yfinance as yf
 
 def scrape_insider_trades(url, fileName):
     # Download the webpage
@@ -34,23 +35,52 @@ def create_summary_file():
     insider_trades = pd.read_csv('insider_trades.csv')
     # Sort by 'Filing Date' and select the most recent 15 stocks
     insider_trades = insider_trades.sort_values('Filing\xa0Date', ascending=False).head(15)
+    # Initialize an empty list to store the rows for the summary DataFrame
+    rows = []
+
+    for _, row in insider_trades.iterrows():
+        try:
+            # Create a Ticker object for the current ticker
+            company = yf.Ticker(row['Ticker'])
+            company_info = company.info
+        except Exception as e:
+            print(f"Error fetching data for {row['Ticker']}: {e}")
+            company_info = {}
+
+        row_dict = {
+            'Filing Date': row['Filing\xa0Date'],
+            'Trade Date': row['Trade\xa0Date'],
+            'Ticker': row['Ticker'],
+            'Company Name': row['Company\xa0Name'],
+            'Industry': row['Industry'],
+            'Ins': row['Ins'],
+            'Price': row['Price'],
+            'Qty': row['Qty'],
+            'Owned': row['Owned'],
+            'ΔOwn': row['ΔOwn'],
+            'Value': row['Value'],
+            'Yahoo Link': 'https://finance.yahoo.com/quote/' + row['Ticker'],
+            'OpenInsider Link': 'http://openinsider.com/' + row['Ticker'],
+            'Graph Image Name': row['Ticker'] + '_graph.png',
+            'Stock Price CSV File Link': row['Ticker'] + '_data.csv',
+            'Company Industry': company_info.get('industry', 'N/A'),
+            'Company Employees': company_info.get('fullTimeEmployees', 'N/A'),
+            'Company Average Volume': company_info.get('averageVolume', 'N/A'),
+            'Company Market Cap': company_info.get('marketCap', 'N/A'),
+            'Company Trailing PE': company_info.get('trailingPE', 'N/A'),
+            'Company Forward PE': company_info.get('forwardPE', 'N/A'),
+            'Company Dividend Yield': company_info.get('dividendYield', 'N/A'),
+            'Company Profit Margins': company_info.get('profitMargins', 'N/A'),
+            'Company Return on Equity': company_info.get('returnOnEquity', 'N/A'),
+        }
+
+        # Append the row dictionary to the rows list
+        rows.append(row_dict)
+
     # Create the summary DataFrame
-    summary = pd.DataFrame({
-        'Filing Date': insider_trades['Filing\xa0Date'],
-        'Trade Date': insider_trades['Trade\xa0Date'],
-        'Ticker': insider_trades['Ticker'],
-        'Company Name': insider_trades['Company\xa0Name'],
-        'Industry': insider_trades['Industry'],
-        'Ins': insider_trades['Ins'],
-        'Price': insider_trades['Price'],
-        'Qty': insider_trades['Qty'],
-        'Owned': insider_trades['Owned'],
-        'ΔOwn': insider_trades['ΔOwn'],
-        'Value': insider_trades['Value'],
-        'Yahoo Link': 'https://finance.yahoo.com/quote/' + insider_trades['Ticker'],
-        'OpenInsider Link': 'http://openinsider.com/' + insider_trades['Ticker'],
-        'Graph Image Name': insider_trades['Ticker'] + '_graph.png',
-        'Stock Price CSV File Link': insider_trades['Ticker'] + '_data.csv'
-    })
+    summary = pd.DataFrame(rows)
+
     # Write the summary DataFrame to the summary.csv file
     summary.to_csv('summary.csv', index=False)
+
+

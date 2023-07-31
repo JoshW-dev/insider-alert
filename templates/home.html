@@ -1,37 +1,63 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <html>
 <head>
-    <title>Insider Watchlist</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Stock Watch</title>
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
-
 </head>
 <body>
 <div class="container">
-    <a href="https://www.buymeacoffee.com/JoshWade" target="_blank" style="position: absolute; top: 20px; right: 40px; display: inline-block; background-color: #FF813F; color: white; padding: 10px 20px; text-decoration: none; font-size: 16px; border-radius: 5px;">Support Me</a>
-    <h1>Artificial Insider</h1>
-<br/>
-<p>This webapp is designed to analyze recent insider trading activities and their impact on stock prices. The tool scrapes SEC data from <a href="http://openinsider.com/latest-cluster-buys">OpenInsider</a>, focusing on instances where multiple high level officers purchase stock from their company within a short period. It then fetches the corresponding stock price data, analyzes how the stock price moved before and after the insider trades, and presents this data in a user-friendly manner.</p>
-<h4>How Does This Tool Work?</h4>
-<p>Each day, the tool scrapes the latest insider trading data and generates a new analysis of the stock performance for the involved companies. The results are visualized in graphs that plot the stock price movement over time, with indicators marking the trade and filing dates. The tool also calculates the percentage change in stock prices from the trade date to the present. All this information is presented in an easy-to-understand format, with direct links to OpenInsider and Yahoo Finance for further research. Please note that this tool should be used for informational purposes only. Always conduct your own research and consider seeking advice from a certified financial advisor before making any investment decisions.</p>
+    <header>
+        <h1 class="title">Stock Watchlist</h1>
+        <a href="https://www.buymeacoffee.com/MethodAI" class="support-btn">Support Me</a>
+    </header>
+    <section class="description">
+        <h2>About the Watchlist</h2>
+        <p>This webapp is designed to analyze recent insider trading activities and their impact on stock prices. The tool scrapes SEC data from <a href="http://openinsider.com/latest-cluster-buys">OpenInsider</a>, focusing on instances where multiple high level officers purchase stock from their company within a short period. It then fetches the corresponding stock price data, analyzes how the stock price moved before and after the insider trades, and presents this data in a user-friendly manner.</p>
+        <h4>How Does This Tool Work?</h4>
+        <p>Each day, the tool scrapes the latest insider trading data and generates a new analysis of the stock performance for the involved companies. The results are visualized in graphs that plot the stock price movement over time, with indicators marking the trade and filing dates. The tool also calculates the percentage change in stock prices from the trade date to the present. All this information is presented in an easy-to-understand format, with direct links to OpenInsider and Yahoo Finance for further research. Please note that this tool should be used for informational purposes only. Always conduct your own research and consider seeking advice from a certified financial advisor before making any investment decisions.</p>
+
+    </section>
+
      
     <table class="table">
         <thead>
             <tr>
-                <th scope="Company Insider Details">Insider Trade Details</th>
-                <th scope="Graph">Graph</th>
+                <th scope="Company Insider Details"></th>
+                <th scope="Graph"></th>
             </tr>
         </thead>
         <tbody>
             {% for row in data %}
                 <tr>
                     <!-- Description -->
-                    <td>
-                        <p>{{ row['Company Name'] }} ({{ row['Ticker'] }}) in the {{ row['Industry'] }} industry had {{ row['Ins'] }} insiders purchase a total of {{ row['Qty'] }} shares valued at ${{ row['Value'] }}. 
-                            <p>Latest trade made on {{ row['Trade Date'] }}. Filed on {{ row['Filing Date'] }}.</p>
-                            
-                        <p><a href="{{ row['Yahoo Link'] }}">Yahoo</a>  <a href="{{ row['OpenInsider Link'] }}">OpenInsider</a></p>
+                    <td style="padding: 10px;">
+                        <h3 style="font-size: 1.25em; font-weight: bold;">{{ row['Company Name'] }} ({{ row['Ticker'] }})</h3>
+                        <p style="font-size: 0.9em;"><strong>Industry:</strong> {{ row['Industry'] }}</p>
+                        <p style="font-size: 0.9em;"><strong>Number of Employees:</strong> {{ row['Company Employees'] }}</p>
+                        <p style="font-size: 0.9em;"><strong>Average Volume:</strong> {{ row['Company Average Volume'] }}</p>
+                        <p style="font-size: 0.9em;"><strong>Market Cap:</strong> ${{ row['Company Market Cap'] }}</p>
+                        <p style="font-size: 0.9em;"><strong>Forward PE:</strong> {{ row['Company Forward PE'] }}</p>
+                        <p style="font-size: 0.9em;"><strong>Dividend Yield:</strong> {{ row['Company Dividend Yield'] }}%</p>
+                        <p style="font-size: 0.9em;"><strong>Profit Margins:</strong> {{ row['Company Profit Margins'] }}%</p>
+                        <p style="font-size: 0.9em;"><strong>Return on Equity:</strong> {{ row['Company Return on Equity'] }}%</p>
+                        <hr>
+                        <p style="font-size: 1em; margin-top: 10px;">
+                            <strong>{{ row['Ins'] }}</strong> insiders purchased a total of <strong>{{ row['Qty'] }}</strong> shares valued at $<strong>{{ row['Value'] }}</strong>. 
+                            Latest trade made on <strong>{{ row['Trade Date'] }}</strong>. Filed on <strong>{{ row['Filing Date'] }}</strong>.
+                        </p>
+                        <p style="font-size: 0.9em; margin-top: 10px;">
+                            <a href="{{ row['Yahoo Link'] }}" style="margin-right: 10px;">Yahoo</a>  
+                            <a href="{{ row['OpenInsider Link'] }}">OpenInsider</a>
+                        </p>
                     </td>
+                    
+                    
+                    
                                         
                     <!-- Graph -->
                     <td>
