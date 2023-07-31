@@ -5,38 +5,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <title>Stock Watch</title>
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
 </head>
 <body>
 <div class="container">
-    <header>
+    <header class="header">
         <h1 class="title">Stock Watchlist</h1>
-        <a href="https://www.buymeacoffee.com/MethodAI" class="support-btn">Support Me</a>
+        <div class="header-buttons">
+
+        <a href="https://medium.com/@wadan" class="btn link-btn">Blog</a>
+        <a href="https://www.buymeacoffee.com/JoshWade" class="btn support-btn">Buy me a Coffee</a>
+        </div>
+
     </header>
     <section class="description">
-        <h2>About the Watchlist</h2>
-        <p>This webapp is designed to analyze recent insider trading activities and their impact on stock prices. The tool scrapes SEC data from <a href="http://openinsider.com/latest-cluster-buys">OpenInsider</a>, focusing on instances where multiple high level officers purchase stock from their company within a short period. It then fetches the corresponding stock price data, analyzes how the stock price moved before and after the insider trades, and presents this data in a user-friendly manner.</p>
-        <h4>How Does This Tool Work?</h4>
-        <p>Each day, the tool scrapes the latest insider trading data and generates a new analysis of the stock performance for the involved companies. The results are visualized in graphs that plot the stock price movement over time, with indicators marking the trade and filing dates. The tool also calculates the percentage change in stock prices from the trade date to the present. All this information is presented in an easy-to-understand format, with direct links to OpenInsider and Yahoo Finance for further research. Please note that this tool should be used for informational purposes only. Always conduct your own research and consider seeking advice from a certified financial advisor before making any investment decisions.</p>
-
+        <p>Welcome to Stock Watchlist - your resource for tracking insider trading activities and their impact on stock prices. We focus on instances where multiple high-level officers purchased their company's stocks within a short period, with data sourced from <a href="http://openinsider.com/latest-cluster-buys">OpenInsider</a>.</p>
+        <h4>How It Works</h4>
+        <p>This app updates the latest insider trading data daily at 5 am EST, analyzes and graphs stock price movements.</p>
+        <p>Note: This tool is for informational purposes only. Consider consulting with a certified financial advisor before making any investment decisions.</p>
+            
     </section>
+    <section class="insider-trades">
 
      
     <table class="table">
+        <h2>Recent Insider Trades</h2>
+
         <thead>
             <tr>
                 <th scope="Company Insider Details"></th>
                 <th scope="Graph"></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="trade-info">
             {% for row in data %}
                 <tr>
                     <!-- Description -->
                     <td style="padding: 10px;">
-                        <h3 style="font-size: 1.25em; font-weight: bold;">{{ row['Company Name'] }} ({{ row['Ticker'] }})</h3>
+                        <h3 class="company-name">{{ row['Company Name'] }} ({{ row['Ticker'] }})</h3>
                         <p style="font-size: 0.9em;"><strong>Industry:</strong> {{ row['Industry'] }}</p>
                         <p style="font-size: 0.9em;"><strong>Number of Employees:</strong> {{ row['Company Employees'] }}</p>
                         <p style="font-size: 0.9em;"><strong>Average Volume:</strong> {{ row['Company Average Volume'] }}</p>
@@ -56,11 +64,8 @@
                         </p>
                     </td>
                     
-                    
-                    
-                                        
                     <!-- Graph -->
-                    <td>
+                    <td class="graph-container">
                         <a href="{{ url_for('static', filename='stockData/' + row['Stock Price CSV File Link']) }}">                            
                             <img src="{{ url_for('static', filename='graphs/' + row['Graph Image Name']) }}" alt="Graph of {{ row['Company Name'] }} stock price" width="600">
                         </a>
@@ -72,6 +77,8 @@
         </tbody>
         
     </table>
+</section>
+
     <h4>Is Insider Trading Legal?</h4>
 <p>Insider trading involves trading a public company's stock or other securities (such as bonds or stock options) based on material, non-public information about the company. While insider trading is illegal when it involves misuse of non-public, material information, it is completely legal if company insiders report their trades to the SEC within two business days of the transaction. This publicly accessible information promotes market transparency. Non-insiders can gain insights from these trades, which can assist their investment decisions and promote a fair marketplace.</p>
 
