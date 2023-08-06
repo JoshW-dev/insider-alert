@@ -1,6 +1,7 @@
 X,Filing Date,Trade Date,Ticker,Company Name,Industry,Ins,Trade Type  ,Price,Qty,Owned,ΔOwn,Value,1d,1w,1m,6m
+DM,2023-08-04 16:07:03,2023-08-02,TCBI,Texas Capital Bancshares Inc/tx,State Commercial Banks,3,P - Purchase,34.28,33610,427323,9,1152088,,,,
+,2023-08-04 06:30:05,2023-08-03,ADC,Agree Realty Corp,Real Estate Investment Trusts,5,P - Purchase,64.23,107995,1520059,8,6936892,,,,
 ,2023-08-03 13:23:49,2023-08-01,BWFG,Bankwell Financial Group Inc.,State Commercial Banks,2,P - Purchase,23.69,7500,200215,4,177675,,,,
-,2023-08-03 06:30:11,2023-08-02,ADC,Agree Realty Corp,Real Estate Investment Trusts,5,P - Purchase,64.34,89746,1501810,6,5774431,,,,
 D,2023-08-02 16:12:16,2023-07-31,NDAQ,Nasdaq Inc.,Security & Commodity Brokers Dealers Exchanges & Services,2,P - Purchase,51.13,14000,1963787,1,715840,,,,
 ,2023-08-02 15:22:15,2023-08-01,SFST,Southern First Bancshares Inc,National Commercial Banks,4,P - Purchase,25.22,8800,159720,6,221929,,,,
 ,2023-07-31 15:49:51,2023-07-31,DPG,Duff & Phelps Utility & Infrastructure Fund Inc.,Closed-End Funds,2,P - Purchase,10.05,8000,21200,61,80435,,,,
@@ -26,7 +27,6 @@ D,2023-07-17 08:54:18,2023-07-06,CDZI,Cadiz Inc,Water Supply,4,P - Purchase,3.80
 D,2023-06-22 16:33:00,2023-06-20,CAVA,Cava Group Inc.,Eating Places,3,P - Purchase,22.00,9295,1009967,1,204490,,,,
 M,2023-06-16 20:18:40,2023-06-14,PFX,Phenixfin Corp,Closed-End Funds,2,P - Purchase,36.15,19804,452392,5,715914,,,,
 M,2023-06-16 17:09:03,2023-06-14,CRGY,Crescent Energy Co,Crude Petroleum & Natural Gas,2,P - Purchase,10.22,11000,66324,20,112440,,,,
-DM,2023-06-16 16:29:14,2023-06-14,TCBI,Texas Capital Bancshares Inc/tx,State Commercial Banks,3,P - Purchase,29.52,28610,420323,7,844438,,,,
 M,2023-06-15 17:25:51,2023-06-14,MRBK,Meridian Corp,National Commercial Banks,5,P - Purchase,8.90,35155,1095590,3,312943,,,,
 ,2023-06-15 16:02:26,2023-06-14,STC,Stewart Information Services Corp,Title Insurance,2,P - Purchase,41.97,3000,133591,2,125909,,,,
 ,2023-06-15 15:33:31,2023-06-14,CTBI,Community Trust Bancorp Inc /ky/,State Commercial Banks,2,P - Purchase,38.03,3000,35212,9,114085,,,,
