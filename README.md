@@ -1,3 +1,6 @@
+Had some great feedback and built a modern version of this app at https://www.insidetrader.site/
+
+
 # Insider Trading Analysis Tool
 This project is a bot designed to track and alert users when multiple high-level insiders (CEOs, CFOs, etc.) buy their own company's stock on the same day. This repository contains lightweight code for a Flask application that scrapes data and displays it on a webpage. The data is updated daily at 5 am EST.
 
